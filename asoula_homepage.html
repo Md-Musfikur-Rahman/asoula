@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asoula Homepage</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --cream: #f9f6f1;
+        --beige: #ede4da;
+        --gold: #c9a96a;
+        --gold-light: #dfc49a;
+        --charcoal: #1f1a17;
+        --charcoal-soft: #3a3430;
+        --sage: #a8b8a3;
+        --teal: #8fafa8;
+        --peach: #ebcfc4;
+        --text-muted: #7a6e68;
+      }
+      body {
+        font-family: "Jost", sans-serif;
+        background: var(--cream);
+        color: var(--charcoal);
+        font-weight: 300;
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1.2rem 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(249, 246, 241, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 0.5px solid rgba(201, 169, 106, 0.2);
+      }
+      .nav-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.6rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        color: var(--charcoal);
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .nav-logo span {
+        color: var(--gold);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--charcoal-soft);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+      .nav-cta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.6rem 1.6rem;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+      }
+      .nav-cta:hover {
+        background: var(--gold);
+        color: var(--cream);
+      }
+
+      section {
+        padding: 6rem 0;
+      }
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 3rem;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: var(--cream);
+        padding-top: 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 55%;
+        height: 130%;
+        background: var(--beige);
+        border-radius: 0 0 0 40%;
+        opacity: 0.5;
+        z-index: 0;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: 10%;
+        right: 8%;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: var(--peach);
+        opacity: 0.18;
+        z-index: 0;
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .hero-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .hero-label::before {
+        content: "";
+        display: inline-block;
+        width: 2rem;
+        height: 0.5px;
+        background: var(--gold);
+      }
+      .hero h1 {
+        font-size: 4.2rem;
+        font-weight: 300;
+        line-height: 1.12;
+        color: var(--charcoal);
+        margin-bottom: 1.6rem;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-sub {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--text-muted);
+        max-width: 420px;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 1rem 2.4rem;
+        background: var(--charcoal);
+        color: var(--cream);
+        border: none;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+        transition: background 0.3s;
+      }
+      .btn-primary:hover {
+        background: var(--charcoal-soft);
+      }
+      .btn-outline {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 1rem 2.4rem;
+        background: transparent;
+        color: var(--charcoal);
+        border: 1px solid var(--charcoal);
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+        transition: all 0.3s;
+      }
+      .btn-outline:hover {
+        background: var(--charcoal);
+        color: var(--cream);
+      }
+      .hero-img-wrap {
+        position: relative;
+      }
+      .hero-img-placeholder {
+        width: 100%;
+        height: 560px;
+        background: var(--beige);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-img-placeholder::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          var(--gold),
+          var(--peach),
+          var(--sage)
+        );
+      }
+      .hero-badge {
+        position: absolute;
+        bottom: -1.5rem;
+        left: -1.5rem;
+        background: var(--cream);
+        padding: 1.2rem 1.6rem;
+        border-left: 2px solid var(--gold);
+        box-shadow: 0 4px 30px rgba(31, 26, 23, 0.08);
+      }
+      .hero-badge-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.2rem;
+        font-weight: 300;
+        color: var(--charcoal);
+      }
+      .hero-badge-txt {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-top: 0.1rem;
+      }
+
+      .strip {
+        background: var(--charcoal);
+        padding: 1.8rem 0;
+      }
+      .strip-inner {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        align-items: center;
+      }
+      .strip-item {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(249, 246, 241, 0.7);
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .strip-dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+      .section-label::before {
+        content: "";
+        display: inline-block;
+        width: 1.5rem;
+        height: 0.5px;
+        background: var(--gold);
+      }
+      .section-title {
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: var(--charcoal);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .section-sub {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.9;
+        font-weight: 300;
+        max-width: 520px;
+      }
+
+      .about-section {
+        background: var(--beige);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+      }
+      .about-img {
+        width: 100%;
+        height: 480px;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        position: relative;
+      }
+      .about-img::before {
+        content: "";
+        position: absolute;
+        top: -1.2rem;
+        left: -1.2rem;
+        right: 1.2rem;
+        bottom: 1.2rem;
+        border: 1px solid var(--gold-light);
+        z-index: 0;
+      }
+      .about-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        font-style: italic;
+        color: var(--charcoal-soft);
+        line-height: 1.6;
+        margin: 1.8rem 0;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--gold);
+      }
+      .about-stats {
+        display: flex;
+        gap: 2.5rem;
+        margin-top: 2.5rem;
+      }
+      .about-stat-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2.6rem;
+        font-weight: 300;
+        color: var(--charcoal);
+      }
+      .about-stat-lbl {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-top: 0.2rem;
+      }
+
+      .services-section {
+        background: var(--cream);
+      }
+      .services-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .services-header .section-label {
+        justify-content: center;
+      }
+      .services-header .section-label::before {
+        display: none;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+      .service-card {
+        background: var(--beige);
+        padding: 2.5rem 2rem;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .service-card:hover {
+        transform: translateY(-4px);
+      }
+      .service-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+      .service-card:hover::after {
+        transform: scaleX(1);
+      }
+      .service-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .service-card h3 {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--charcoal);
+        margin-bottom: 0.8rem;
+      }
+      .service-card p {
+        font-size: 0.85rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+      }
+      .service-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: 1.5rem;
+        border-bottom: 0.5px solid var(--gold-light);
+        padding-bottom: 0.2rem;
+      }
+
+      .retreats-section {
+        background: var(--charcoal);
+        position: relative;
+        overflow: hidden;
+      }
+      .retreats-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: rgba(201, 169, 106, 0.04);
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+      }
+      .retreats-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .retreats-text .section-label {
+        color: var(--gold-light);
+      }
+      .retreats-text .section-title {
+        color: var(--cream);
+      }
+      .retreats-text .section-sub {
+        color: rgba(249, 246, 241, 0.65);
+      }
+      .retreat-img {
+        width: 100%;
+        height: 440px;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(249, 246, 241, 0.4);
+        position: relative;
+      }
+      .retreat-tag {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        background: var(--gold);
+        color: var(--cream);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.4rem 1rem;
+        font-family: "Jost", sans-serif;
+      }
+      .retreat-list {
+        list-style: none;
+        margin: 2rem 0;
+      }
+      .retreat-list li {
+        font-size: 0.85rem;
+        color: rgba(249, 246, 241, 0.7);
+        padding: 0.7rem 0;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      .retreat-list li::before {
+        content: "";
+        width: 1.2rem;
+        height: 0.5px;
+        background: var(--gold-light);
+        flex-shrink: 0;
+      }
+      .btn-gold {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 1rem 2.4rem;
+        background: var(--gold);
+        color: var(--cream);
+        border: none;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+        transition: background 0.3s;
+      }
+      .btn-gold:hover {
+        background: var(--gold-light);
+      }
+
+      .testimonials-section {
+        background: var(--beige);
+      }
+      .test-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .test-header .section-label {
+        justify-content: center;
+      }
+      .test-header .section-label::before {
+        display: none;
+      }
+      .test-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 3.5rem;
+        border: 1px solid var(--gold-light);
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .test-tab {
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.75rem 1.8rem;
+        background: transparent;
+        color: var(--text-muted);
+        border: none;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        transition: all 0.3s;
+        border-right: 0.5px solid var(--gold-light);
+      }
+      .test-tab:last-child {
+        border-right: none;
+      }
+      .test-tab.active {
+        background: var(--gold);
+        color: var(--cream);
+      }
+      .test-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+      }
+      .test-card {
+        background: var(--cream);
+        padding: 2.5rem 2rem;
+        position: relative;
+      }
+      .test-card::before {
+        content: "\201C";
+        font-family: "Cormorant Garamond", serif;
+        font-size: 5rem;
+        color: var(--gold-light);
+        position: absolute;
+        top: 0.5rem;
+        left: 1.5rem;
+        line-height: 1;
+        opacity: 0.6;
+      }
+      .test-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        font-style: italic;
+        line-height: 1.75;
+        color: var(--charcoal-soft);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .test-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        border-top: 0.5px solid var(--beige);
+        padding-top: 1.2rem;
+      }
+      .test-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--beige);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1rem;
+        color: var(--text-muted);
+      }
+      .test-name {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--charcoal);
+        letter-spacing: 0.05em;
+      }
+      .test-role {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-top: 0.2rem;
+        letter-spacing: 0.04em;
+      }
+      .test-stars {
+        color: var(--gold);
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+        letter-spacing: 0.1em;
+      }
+
+      .products-section {
+        background: var(--cream);
+      }
+      .products-header {
+        margin-bottom: 3rem;
+      }
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .product-card {
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+      .product-card:hover {
+        transform: translateY(-3px);
+      }
+      .product-img {
+        width: 100%;
+        height: 280px;
+        background: var(--beige);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        position: relative;
+        overflow: hidden;
+      }
+      .product-tag {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--peach);
+        color: var(--charcoal-soft);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.7rem;
+      }
+      .product-info {
+        padding: 1.3rem 0;
+      }
+      .product-cat {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+      }
+      .product-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--charcoal);
+        margin-bottom: 0.3rem;
+      }
+      .product-price {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .booking-section {
+        background: var(--peach);
+        text-align: center;
+      }
+      .booking-inner {
+        max-width: 620px;
+        margin: 0 auto;
+      }
+      .booking-inner .section-label {
+        justify-content: center;
+      }
+      .booking-inner .section-label::before {
+        display: none;
+      }
+      .booking-inner .section-title {
+        font-size: 3rem;
+      }
+      .booking-inner .section-sub {
+        margin: 1.5rem auto;
+        max-width: 480px;
+        text-align: center;
+      }
+      .booking-options {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+      .booking-opt {
+        background: var(--cream);
+        padding: 2rem 1.8rem;
+        text-align: left;
+        flex: 1;
+        min-width: 200px;
+        max-width: 240px;
+        position: relative;
+      }
+      .booking-opt-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+      }
+      .booking-opt h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        color: var(--charcoal);
+        margin-bottom: 0.4rem;
+      }
+      .booking-opt p {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .booking-opt-price {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        color: var(--charcoal);
+        margin-top: 1rem;
+      }
+      .booking-free {
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: var(--sage);
+        color: var(--cream);
+        padding: 0.25rem 0.6rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .portal-section {
+        background: var(--charcoal);
+      }
+      .portal-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .portal-text .section-label {
+        color: var(--gold-light);
+      }
+      .portal-text .section-title {
+        color: var(--cream);
+      }
+      .portal-text .section-sub {
+        color: rgba(249, 246, 241, 0.6);
+      }
+      .portal-features {
+        margin: 2rem 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .portal-feat {
+        background: rgba(255, 255, 255, 0.04);
+        padding: 1.2rem;
+        border-left: 2px solid rgba(201, 169, 106, 0.3);
+      }
+      .portal-feat-title {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold-light);
+        margin-bottom: 0.3rem;
+      }
+      .portal-feat-desc {
+        font-size: 0.8rem;
+        color: rgba(249, 246, 241, 0.5);
+        line-height: 1.6;
+      }
+      .portal-mockup {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 2rem;
+        border-radius: 2px;
+      }
+      .portal-mock-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 1.5rem;
+      }
+      .portal-mock-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(201, 169, 106, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        color: var(--gold-light);
+      }
+      .portal-mock-name {
+        font-size: 0.9rem;
+        color: rgba(249, 246, 241, 0.8);
+      }
+      .portal-mock-role {
+        font-size: 0.7rem;
+        color: rgba(249, 246, 241, 0.4);
+        margin-top: 0.1rem;
+      }
+      .portal-mock-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .portal-mock-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.9rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .portal-mock-item-label {
+        font-size: 0.78rem;
+        color: rgba(249, 246, 241, 0.6);
+      }
+      .portal-mock-item-badge {
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.6rem;
+        background: rgba(201, 169, 106, 0.15);
+        color: var(--gold-light);
+      }
+      .coming-soon-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--sage);
+        margin-top: 1.5rem;
+      }
+      .coming-soon-tag::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: var(--sage);
+      }
+
+      footer {
+        background: var(--beige);
+        padding: 4rem 0 2rem;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+      .footer-logo {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-bottom: 1rem;
+      }
+      .footer-logo span {
+        color: var(--gold);
+      }
+      .footer-tagline {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+      .footer-social {
+        display: flex;
+        gap: 0.8rem;
+      }
+      .footer-social-btn {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(201, 169, 106, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+      .footer-social-btn:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+      .footer-col h5 {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--charcoal);
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 0.5px solid rgba(201, 169, 106, 0.3);
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+      .footer-col a {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .footer-col a:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        border-top: 0.5px solid rgba(201, 169, 106, 0.2);
+        padding-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer-copy {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+      }
+      .footer-legal {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .footer-legal a {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+
+      .divider {
+        width: 3rem;
+        height: 1px;
+        background: var(--gold);
+        margin: 2rem 0;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-inner {
+        animation: fadeUp 0.9s ease both;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="#">A<span>·</span>soula</a>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Coaching</a></li>
+        <li><a href="#">Retreats</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Corporate</a></li>
+        <li><a href="#">Portal</a></li>
+      </ul>
+      <button class="nav-cta">Book Consultation</button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-label">Coaching · Retreats · Transformation</div>
+            <h1>Clarity <em>Changes</em><br />Everything</h1>
+            <p class="hero-sub">
+              Asoula helps you understand what's actually going on — so you can
+              move differently in your life, your decisions, and your direction.
+            </p>
+            <div class="hero-btns">
+              <button class="btn-primary">Begin Your Journey</button>
+              <button class="btn-outline">Explore Retreats</button>
+            </div>
+          </div>
+          <div class="hero-img-wrap">
+            <div class="hero-img-placeholder">Your Professional Photo</div>
+            <div class="hero-badge">
+              <div class="hero-badge-num">500+</div>
+              <div class="hero-badge-txt">Lives Transformed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="strip">
+      <div class="strip-inner">
+        <div class="strip-item">
+          <span class="strip-dot"></span>1:1 Coaching
+        </div>
+        <div class="strip-item">
+          <span class="strip-dot"></span>Luxury Retreats
+        </div>
+        <div class="strip-item">
+          <span class="strip-dot"></span>Corporate Wellbeing
+        </div>
+        <div class="strip-item">
+          <span class="strip-dot"></span>Conscious Products
+        </div>
+        <div class="strip-item">
+          <span class="strip-dot"></span>Client Portal
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img">
+            Your Photo Here
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: var(--cream);
+                opacity: 0.04;
+                z-index: 1;
+              "
+            ></div>
+          </div>
+          <div>
+            <div class="section-label">The Asoula Philosophy</div>
+            <h2 class="section-title">
+              Where <em>Clarity</em><br />Meets Courage
+            </h2>
+            <div class="divider"></div>
+            <p class="section-sub">
+              Asoula is a premium wellness ecosystem built for women who are
+              done waiting for permission. Through deep coaching, immersive
+              retreats, and curated products, we create the space for you to
+              finally hear yourself clearly.
+            </p>
+            <p class="about-quote">
+              "The most transformational journey you'll ever take is the one
+              that leads you back to yourself."
+            </p>
+            <div class="about-stats">
+              <div>
+                <div class="about-stat-num">8+</div>
+                <div class="about-stat-lbl">Years Experience</div>
+              </div>
+              <div>
+                <div class="about-stat-num">12</div>
+                <div class="about-stat-lbl">Countries Reached</div>
+              </div>
+              <div>
+                <div class="about-stat-num">97%</div>
+                <div class="about-stat-lbl">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+      <div class="container">
+        <div class="services-header">
+          <div class="section-label">What We Offer</div>
+          <h2 class="section-title">The Asoula <em>Universe</em></h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>1:1 Coaching</h3>
+            <p>
+              Deep, personalised coaching sessions designed to create lasting
+              clarity, confidence, and direction in your life and career.
+            </p>
+            <div class="service-link">Discover more →</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">◈</div>
+            <h3>Luxury Retreats</h3>
+            <p>
+              Immersive transformational retreats in breathtaking locations. A
+              sacred pause from your world to reconnect with yourself.
+            </p>
+            <div class="service-link">Explore retreats →</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">◎</div>
+            <h3>Corporate Wellbeing</h3>
+            <p>
+              Bespoke wellbeing programmes for forward-thinking organisations
+              who understand that inner wellness drives outer performance.
+            </p>
+            <div class="service-link">Work with us →</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">❋</div>
+            <h3>Conscious Products</h3>
+            <p>
+              Curated tools, journals, and wellness products thoughtfully
+              designed to support your daily practice and inner journey.
+            </p>
+            <div class="service-link">Shop the collection →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RETREATS -->
+    <section class="retreats-section">
+      <div class="container">
+        <div class="retreats-inner">
+          <div class="retreats-text">
+            <div class="section-label">Signature Experience</div>
+            <h2 class="section-title" style="color: #f9f6f1">
+              The <em style="color: #c9a96a">Asoula</em><br />Retreat Experience
+            </h2>
+            <div class="divider"></div>
+            <p
+              style="
+                font-size: 0.9rem;
+                color: rgba(249, 246, 241, 0.65);
+                line-height: 1.85;
+              "
+            >
+              Step away from the noise and into a curated experience of rest,
+              reflection, and renewal. Each retreat is thoughtfully designed to
+              create a profound shift in how you see yourself and what's
+              possible for you.
+            </p>
+            <ul class="retreat-list">
+              <li>Small, intimate groups — maximum 10 guests</li>
+              <li>Luxury accommodation in handpicked locations</li>
+              <li>Daily movement, meditation & coaching circles</li>
+              <li>Bespoke meals crafted for nourishment</li>
+              <li>All-inclusive experience with lifelong community</li>
+            </ul>
+            <button class="btn-gold">View Upcoming Retreats</button>
+          </div>
+          <div>
+            <div class="retreat-img">
+              <div class="retreat-tag">2025 Dates Now Open</div>
+              Retreat Photography
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="test-header">
+          <div class="section-label">What Others Say</div>
+          <h2 class="section-title">Stories of <em>Transformation</em></h2>
+        </div>
+        <div class="test-tabs" id="testTabs">
+          <button class="test-tab active" onclick="switchTab('coaching', this)">
+            Coaching
+          </button>
+          <button class="test-tab" onclick="switchTab('retreat', this)">
+            Retreats
+          </button>
+          <button class="test-tab" onclick="switchTab('corporate', this)">
+            Corporate
+          </button>
+        </div>
+        <div id="testimonials-content" class="test-grid">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products-section">
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+          "
+        >
+          <div>
+            <div class="section-label">Asoula Shop</div>
+            <h2 class="section-title">Conscious <em>Creations</em></h2>
+          </div>
+          <button class="btn-outline" style="flex-shrink: 0">
+            View All Products
+          </button>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img">
+              <div class="product-tag">Bestseller</div>
+              Product Image
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Journals & Tools</div>
+              <div class="product-name">The Clarity Journal</div>
+              <div class="product-price">£38.00</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">
+              <div class="product-tag">New</div>
+              Product Image
+            </div>
+            <div class="product-info">
+              <div class="product-cat">Digital Downloads</div>
+              <div class="product-name">Inner Work Workbook</div>
+              <div class="product-price">£22.00</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-img">Product Image</div>
+            <div class="product-info">
+              <div class="product-cat">Wellness</div>
+              <div class="product-name">Asoula Self-Care Kit</div>
+              <div class="product-price">£65.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-inner">
+          <div class="section-label">Work With Asoula</div>
+          <h2 class="section-title">
+            Ready to Begin<br />Your <em>Journey?</em>
+          </h2>
+          <p class="section-sub">
+            Choose the experience that resonates with where you are right now.
+            Every journey starts with a single, brave step.
+          </p>
+        </div>
+        <div class="booking-options">
+          <div class="booking-opt">
+            <div class="booking-opt-label">Free</div>
+            <h4>Discovery Call</h4>
+            <p>A 15-minute conversation to explore how we can work together.</p>
+            <div class="booking-opt-price">£0</div>
+            <div class="booking-free">Free</div>
+          </div>
+          <div class="booking-opt">
+            <div class="booking-opt-label">Popular</div>
+            <h4>Coaching Session</h4>
+            <p>
+              Deep 60-minute 1:1 coaching for clarity, decisions, and direction.
+            </p>
+            <div class="booking-opt-price">£150</div>
+          </div>
+          <div class="booking-opt">
+            <div class="booking-opt-label">Experience</div>
+            <h4>Retreat Deposit</h4>
+            <p>
+              Secure your place at the next Asoula luxury retreat experience.
+            </p>
+            <div class="booking-opt-price">£500</div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem">
+          <button class="btn-primary">Book Your Free Consultation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT PORTAL -->
+    <section class="portal-section">
+      <div class="container">
+        <div class="portal-inner">
+          <div class="portal-text">
+            <div class="section-label">The Asoula Ecosystem</div>
+            <h2 class="section-title" style="color: #f9f6f1">
+              Your Private <em style="color: #c9a96a">Member</em><br />Portal
+            </h2>
+            <div class="divider"></div>
+            <p
+              class="portal-text section-sub"
+              style="font-size: 0.9rem; line-height: 1.85"
+            >
+              A secure, beautifully designed space where your entire Asoula
+              experience lives — your purchases, resources, worksheets, and
+              coaching journey, all in one place.
+            </p>
+            <div class="portal-features">
+              <div class="portal-feat">
+                <div class="portal-feat-title">Downloads</div>
+                <div class="portal-feat-desc">
+                  Access your purchased content instantly
+                </div>
+              </div>
+              <div class="portal-feat">
+                <div class="portal-feat-title">Worksheets</div>
+                <div class="portal-feat-desc">
+                  Complete homework between sessions
+                </div>
+              </div>
+              <div class="portal-feat">
+                <div class="portal-feat-title">Retreats</div>
+                <div class="portal-feat-desc">
+                  All retreat resources in one place
+                </div>
+              </div>
+              <div class="portal-feat">
+                <div class="portal-feat-title">History</div>
+                <div class="portal-feat-desc">
+                  View orders and session notes
+                </div>
+              </div>
+            </div>
+            <div class="coming-soon-tag">Coming Soon — Launching 2025</div>
+          </div>
+          <div class="portal-mockup">
+            <div class="portal-mock-header">
+              <div class="portal-mock-avatar">S</div>
+              <div>
+                <div class="portal-mock-name">Welcome back, Sarah</div>
+                <div class="portal-mock-role">Asoula Member · Premium</div>
+              </div>
+            </div>
+            <div class="portal-mock-items">
+              <div class="portal-mock-item">
+                <div class="portal-mock-item-label">
+                  The Clarity Journal PDF
+                </div>
+                <div class="portal-mock-item-badge">Download</div>
+              </div>
+              <div class="portal-mock-item">
+                <div class="portal-mock-item-label">Session 3 Worksheet</div>
+                <div class="portal-mock-item-badge">Complete</div>
+              </div>
+              <div class="portal-mock-item">
+                <div class="portal-mock-item-label">
+                  Retreat Prep Guide — Bali
+                </div>
+                <div class="portal-mock-item-badge">View</div>
+              </div>
+              <div class="portal-mock-item">
+                <div class="portal-mock-item-label">Inner Work Workbook</div>
+                <div class="portal-mock-item-badge">Download</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">A<span>·</span>soula</div>
+            <p class="footer-tagline">
+              A premium wellness ecosystem for women who are ready to move
+              differently — in their lives, their decisions, and their
+              direction.
+            </p>
+            <div class="footer-social">
+              <a class="footer-social-btn" href="#">In</a>
+              <a class="footer-social-btn" href="#">Ig</a>
+              <a class="footer-social-btn" href="#">Yt</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="#">About Asoula</a></li>
+              <li><a href="#">1:1 Coaching</a></li>
+              <li><a href="#">Retreats</a></li>
+              <li><a href="#">Corporate</a></li>
+              <li><a href="#">Shop</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Podcast</a></li>
+              <li><a href="#">Free Resources</a></li>
+              <li><a href="#">Member Portal</a></li>
+              <li><a href="#">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Connect</h5>
+            <ul>
+              <li><a href="#">Book a Call</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Affiliates</a></li>
+              <li><a href="#">Partnerships</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            © 2025 Asoula. All rights reserved. Clarity Changes Everything.
+          </div>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const testimonials = {
+        coaching: [
+          {
+            text: "Working with Asoula completely changed how I see myself. Within three sessions I had more clarity about my life direction than I'd had in a decade. I didn't just find my path — I finally trusted myself to walk it.",
+            name: "Amelia R.",
+            role: "Senior Leader, London",
+            init: "AR",
+          },
+          {
+            text: "I came in feeling completely stuck. The coaching process was gentle yet deeply powerful. I left with practical tools, a new perspective, and a quiet confidence I had never experienced before.",
+            name: "Priya S.",
+            role: "Entrepreneur, Dubai",
+            init: "PS",
+          },
+          {
+            text: "This isn't coaching. It's transformation. I was sceptical, but after the first session I knew something had shifted. Six months on, I have made decisions I never thought I was brave enough to make.",
+            name: "Charlotte M.",
+            role: "Creative Director, Manchester",
+            init: "CM",
+          },
+        ],
+        retreat: [
+          {
+            text: "The retreat was the most profound experience of my adult life. The combination of the setting, the group, the facilitation, and the structure created something truly sacred. I came home different.",
+            name: "Natasha K.",
+            role: "Retreat Attendee, Bali",
+            init: "NK",
+          },
+          {
+            text: "I have attended wellness retreats before, but Asoula is in a completely different category. The attention to every detail — the food, the flow, the facilitation — was beyond anything I expected.",
+            name: "Sofia B.",
+            role: "Retreat Attendee, Portugal",
+            init: "SB",
+          },
+          {
+            text: "I booked on a whim and it turned out to be the best decision of my year. The group of women, the space, and the daily rhythm gave me something I had been searching for without even knowing it.",
+            name: "Rachel T.",
+            role: "Retreat Attendee, Morocco",
+            init: "RT",
+          },
+        ],
+        corporate: [
+          {
+            text: "We brought Asoula in for our senior leadership team and the impact was immediate and measurable. The programme created genuine psychological safety and the conversations that followed changed our culture.",
+            name: "Hannah W.",
+            role: "Chief People Officer, London",
+            init: "HW",
+          },
+          {
+            text: "We had tried many wellbeing providers before. None came close to the depth and quality of the Asoula experience. Our team left the programme more connected, more resilient, and more energised.",
+            name: "James O.",
+            role: "Managing Director, Dublin",
+            init: "JO",
+          },
+          {
+            text: "The ROI was clear within a month. Reduced stress indicators, stronger team cohesion, and managers reporting more meaningful conversations. Asoula delivered more than we expected.",
+            name: "Lydia C.",
+            role: "Head of HR, Amsterdam",
+            init: "LC",
+          },
+        ],
+      };
+
+      let activeTab = "coaching";
+
+      function switchTab(tab, btn) {
+        activeTab = tab;
+        document
+          .querySelectorAll(".test-tab")
+          .forEach((t) => t.classList.remove("active"));
+        btn.classList.add("active");
+        renderTestimonials();
+      }
+
+      function renderTestimonials() {
+        const data = testimonials[activeTab];
+        const html = data
+          .map(
+            (t) => `
+    <div class="test-card">
+      <div class="test-text">${t.text}</div>
+      <div class="test-author">
+        <div class="test-avatar">${t.init}</div>
+        <div>
+          <div class="test-name">${t.name}</div>
+          <div class="test-role">${t.role}</div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+        document.getElementById("testimonials-content").innerHTML = html;
+      }
+
+      renderTestimonials();
+    </script>
+  </body>
+</html>
